@@ -272,7 +272,8 @@ proc createCommunity*(name: string, description: string, access: int, ensOnly: b
       "imageAx": aX,
       "imageAy": aY,
       "imageBx": bX,
-      "imageBy": bY
+      "imageBy": bY,
+      "messageArchiveSeedingEnabled": true
     }]).parseJSON()
 
   if rpcResult{"error"} != nil:
@@ -296,6 +297,8 @@ proc editCommunity*(communityId: string, name: string, description: string, acce
       "imageAy": aY,
       "imageBx": bX,
       "imageBy": bY
+      "messageArchiveSeedingEnabled": false
+      "messageArchiveFetchingEnabled": true
     }]).parseJSON()
 
   if rpcResult{"error"} != nil:
